@@ -27,3 +27,13 @@ function broadcast() {
         client.send(JSON.stringify(orderBook))
     );
 }
+const express = require("express");
+const app = express();
+const twofaRoutes = require("./routes/twofa");
+
+app.use(express.json());
+app.use("/api/2fa", twofaRoutes);
+
+app.listen(5000, () => {
+  console.log("Bit-City backend running");
+});
