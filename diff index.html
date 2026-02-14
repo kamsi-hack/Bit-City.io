@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bit-City | Cryptocurrency Exchange</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
+}
+
+body{
+    background:#0b0e11;
+    color:white;
+}
+
+/* ================= NAVBAR ================= */
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 80px;
+}
+
+.logo{
+    font-size:26px;
+    font-weight:800;
+    color:#fcd535;
+}
+
+nav a{
+    margin-left:30px;
+    text-decoration:none;
+    color:white;
+    font-weight:500;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#fcd535;
+}
+
+.nav-btn{
+    padding:8px 20px;
+    border-radius:5px;
+}
+
+.register-btn{
+    background:#fcd535;
+    color:black;
+}
+
+/* ================= HERO ================= */
+.hero{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:100px 80px;
+}
+
+.hero-text{
+    max-width:600px;
+}
+
+.hero-text h1{
+    font-size:56px;
+    font-weight:800;
+    line-height:1.2;
+}
+
+.hero-text span{
+    color:#fcd535;
+}
+
+.hero-text p{
+    margin-top:20px;
+    color:#b7bdc6;
+    font-size:18px;
+}
+
+.hero-buttons{
+    margin-top:35px;
+}
+
+.btn{
+    padding:14px 35px;
+    font-weight:600;
+    border-radius:6px;
+    border:none;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.primary-btn{
+    background:#fcd535;
+    color:black;
+}
+
+.secondary-btn{
+    background:transparent;
+    border:1px solid #fcd535;
+    color:#fcd535;
+    margin-left:15px;
+}
+
+.hero-image img{
+    width:480px;
+}
+
+/* ================= MARKET ================= */
+.market{
+    padding:80px;
+}
+
+.market h2{
+    margin-bottom:30px;
+    font-size:28px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th,td{
+    padding:16px;
+    text-align:left;
+}
+
+th{
+    color:#b7bdc6;
+    font-weight:500;
+}
+
+tr{
+    border-bottom:1px solid #1e2329;
+}
+
+.green{
+    color:#0ecb81;
+}
+
+.red{
+    color:#f6465d;
+}
+
+/* ================= FEATURES ================= */
+.features{
+    display:flex;
+    justify-content:space-between;
+    padding:100px 80px;
+    background:#111418;
+}
+
+.feature{
+    width:30%;
+}
+
+.feature h3{
+    margin:20px 0;
+}
+
+/* ================= MODAL ================= */
+.modal{
+    display:none;
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.75);
+    justify-content:center;
+    align-items:center;
+}
+
+.modal-box{
+    background:#1e2329;
+    padding:40px;
+    width:380px;
+    border-radius:8px;
+}
+
+.modal-box h2{
+    margin-bottom:20px;
+}
+
+.modal-box input{
+    width:100%;
+    padding:12px;
+    margin-bottom:15px;
+    background:#2b3139;
+    border:none;
+    color:white;
+}
+
+.close{
+    float:right;
+    cursor:pointer;
+    font-size:20px;
+}
+
+/* ================= FOOTER ================= */
+footer{
+    padding:30px;
+    text-align:center;
+    color:#b7bdc6;
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:900px){
+.hero{
+    flex-direction:column;
+    text-align:center;
+}
+.hero-image img{
+    width:300px;
+    margin-top:40px;
+}
+.features{
+    flex-direction:column;
+}
+.feature{
+    width:100%;
+    margin-bottom:40px;
+}
+}
+</style>
+</head>
+<body>
+
+<header>
+    <div class="logo">Bit-City</div>
+    <nav>
+        <a href="#">Buy Crypto</a>
+        <a href="#">Markets</a>
+        <a href="#">Trade</a>
+        <a href="#">Earn</a>
+        <a href="#" class="nav-btn" onclick="openModal('login')">Login</a>
+        <a href="#" class="nav-btn register-btn" onclick="openModal('register')">Register</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-text">
+        <h1>Buy & Trade Crypto<br><span>Securely on Bit-City</span></h1>
+        <p>Join millions of users trading Bitcoin, Ethereum, and other cryptocurrencies with low fees and high security.</p>
+        <div class="hero-buttons">
+            <button class="btn primary-btn" onclick="openModal('register')">Get Started</button>
+            <button class="btn secondary-btn">View Markets</button>
+        </div>
+    </div>
+    <div class="hero-image">
+        <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" alt="Crypto">
+    </div>
+</section>
+
+<section class="market">
+    <h2>Market Overview</h2>
+    <table>
+        <tr>
+            <th>Coin</th>
+            <th>Price</th>
+            <th>24h Change</th>
+        </tr>
+        <tr>
+            <td>BTC</td>
+            <td>$43,250</td>
+            <td class="green">+3.42%</td>
+        </tr>
+        <tr>
+            <td>ETH</td>
+            <td>$3,120</td>
+            <td class="red">-1.18%</td>
+        </tr>
+        <tr>
+            <td>BNB</td>
+            <td>$415</td>
+            <td class="green">+2.05%</td>
+        </tr>
+    </table>
+</section>
+
+<section class="features">
+    <div class="feature">
+        <h3>Secure Asset Fund</h3>
+        <p>Bit-City protects user funds with industry-leading security and cold wallet storage.</p>
+    </div>
+    <div class="feature">
+        <h3>Low Trading Fees</h3>
+        <p>Trade your favorite cryptocurrencies with some of the lowest fees in the industry.</p>
+    </div>
+    <div class="feature">
+        <h3>24/7 Support</h3>
+        <p>Our global support team is available anytime you need assistance.</p>
+    </div>
+</section>
+
+<!-- LOGIN MODAL -->
+<div class="modal" id="loginModal">
+    <div class="modal-box">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Login to Bit-City</h2>
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Password">
+        <button class="btn primary-btn" style="width:100%;">Login</button>
+    </div>
+</div>
+
+<!-- REGISTER MODAL -->
+<div class="modal" id="registerModal">
+    <div class="modal-box">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Create Bit-City Account</h2>
+        <input type="text" placeholder="Full Name">
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Password">
+        <button class="btn primary-btn" style="width:100%;">Register</button>
+    </div>
+</div>
+
+<footer>
+    © 2026 Bit-City. All rights reserved.
+</footer>
+
+<script>
+function openModal(type){
+    if(type === "login"){
+        document.getElementById("loginModal").style.display="flex";
+    }else{
+        document.getElementById("registerModal").style.display="flex";
+    }
+}
+
+function closeModal(){
+    document.getElementById("loginModal").style.display="none";
+    document.getElementById("registerModal").style.display="none";
+}
+
+window.onclick = function(event){
+    if(event.target.classList.contains("modal")){
+        closeModal();
+    }
+}
+</script>
+
+</body>
+</html>
+
