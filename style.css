@@ -1,0 +1,30 @@
+body {
+  margin:0;
+  background:#0b0e17;
+  color:#fff;
+  font-family: 'Inter', sans-serif;
+}
+
+header {
+  background:#121722;
+  padding:20px;
+  font-size:22px;
+  font-weight:bold;
+}
+
+.trading {
+  display:flex;
+  padding:20px;
+}
+
+#chart {
+  width:70%;
+  height:500px;
+}
+
+#orderBook {
+  width:30%;
+  background:#141933;
+  padding:20px;
+  border-radius:10px;
+}
